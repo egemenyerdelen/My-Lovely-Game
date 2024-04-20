@@ -19,15 +19,6 @@ public class Player : MonoBehaviour
         PlayerMovement();
     }
 
-    public void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.name == "Money")
-        {
-            playerMoney++; 
-            Destroy(other.gameObject);
-        }
-    }
-
     private void PlayerMovement()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
