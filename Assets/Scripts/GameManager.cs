@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
         TextUpdates();
     }
 
-    public void TextUpdates()
+    private void TextUpdates()
     {
         // 0 = Money, 1 = Wood, 2 = Stone
         resourceTexts[0].text = resourceTexts[0].name + ": " + moneyCount;
