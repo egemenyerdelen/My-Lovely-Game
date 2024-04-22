@@ -5,12 +5,14 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private float playerMoney;
     public float playerSpeed = 5f;
+    [SerializeField] private float playerMoney;
+
+    private Rigidbody2D playerRb;
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerRb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -27,6 +29,6 @@ public class Player : MonoBehaviour
         Vector3 direction = new Vector3(horizontalInput, verticalInput);
 
         // Move the player
-        transform.Translate(direction * (playerSpeed * Time.deltaTime));
+        playerRb.velocity = new Vector2(direction.x, direction.y) * playerSpeed;
     }
 }
