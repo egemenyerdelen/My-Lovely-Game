@@ -1,29 +1,30 @@
 using UnityEngine;
+using Input = UnityEngine.Input;
 
-public class Player : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     public float playerSpeed = 5f;
-    [SerializeField] private float playerMoney;
 
     private Rigidbody2D playerRb;
+    
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         PlayerMovement();
     }
 
     private void PlayerMovement()
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
+        var horizontalInput = Input.GetAxis("Horizontal");
+        var verticalInput = Input.GetAxis("Vertical");
 
-        Vector3 direction = new Vector3(horizontalInput, verticalInput);
+        var direction = new Vector3(horizontalInput, verticalInput);
 
         // Move the player
         playerRb.velocity = new Vector2(direction.x, direction.y) * playerSpeed;
