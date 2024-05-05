@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2439787358426310028}
   - component: {fileID: 5127952983400741440}
-  - component: {fileID: 7666851408968660233}
   - component: {fileID: 8016247561894197391}
   m_Layer: 0
   m_Name: Money
@@ -86,18 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7666851408968660233
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3412682653683030220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 126ffdc239760a24f858e2b144f93de5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &8016247561894197391
 BoxCollider2D:
   m_ObjectHideFlags: 0

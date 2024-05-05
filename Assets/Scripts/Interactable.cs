@@ -1,19 +1,15 @@
 using UnityEngine;
 
 public class Interactable : MonoBehaviour
-{ 
+{
     [SerializeField] private float radius = 1f;
-    [SerializeField] private Transform interactionTransform;
-    
-    private GameObject _playerGameObject;
+    [SerializeField] private Transform customInteractionPoint;
+    [SerializeField] private GameObject playerGameObject;
+    private Transform InteractionPoint => customInteractionPoint != null ? customInteractionPoint : transform;
 
     private void Start()
     {
-        _playerGameObject = FindObjectOfType<PlayerController>().gameObject;
-        if (interactionTransform == null)
-        {
-            interactionTransform = transform;
-        }
+        
     }
 
     private void Update()
@@ -24,7 +20,7 @@ public class Interactable : MonoBehaviour
     protected virtual void Interact()
     {
         // This method is meant to be overwritten
-        var isInRadius = Vector2.Distance(_playerGameObject.transform.position, interactionTransform.position) <= radius;
+        var isInRadius = Vector2.Distance(playerGameObject.transform.position, InteractionPoint.position) <= radius;
         if (Input.GetKeyDown(KeyCode.E) && isInRadius)
         {
             Debug.Log("Interacted with " + transform.name);
@@ -34,6 +30,6 @@ public class Interactable : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(interactionTransform.position, radius);
+        Gizmos.DrawWireSphere(InteractionPoint.position, radius);
     }
 }
