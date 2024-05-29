@@ -9,9 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 549e88c233aea964fa25f5db9040f1dd, type: 3}
-  m_Name: Armor Plate
+  m_Script: {fileID: 11500000, guid: 941b2eded9507bb4bb90fff8d5aca755, type: 3}
+  m_Name: Helmet of Fire
   m_EditorClassIdentifier: 
-  name: Armor Plate
-  icon: {fileID: 21300000, guid: 6b570f1950357884ebdd037c043e025f, type: 3}
+  name: Helmet of Fire
+  icon: {fileID: 21300000, guid: 591550718773f8849afe177423de1e31, type: 3}
   isDefaultItem: 0
+  equipSlot: 0
+  damageModifier: 2
+  armorModifier: 1
