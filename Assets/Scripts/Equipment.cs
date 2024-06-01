@@ -5,8 +5,8 @@ public class Equipment : Item
 {
     public EquipmentSlot equipSlot;
     
-    [SerializeField] private int damageModifier;
-    [SerializeField] private int armorModifier;
+    public int damageModifier;
+    public int armorModifier;
 
     public override void Use()
     {
